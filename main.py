@@ -1,16 +1,8 @@
-#module 3
-def single_root_words(root_word, *other_words):
-    same_words = []
-    for i in other_words:
-        if root_word.lower() in i.lower() or i.lower() in root_word.lower():
-            same_words.append(i)
-    return same_words
+def test_function():
+    def inner_function():
+        print("Я в области видимости функции test_function")
 
+    inner_function()
 
-result1 = single_root_words('rich', 'richiest', 'orichalcum', 'cheers', 'richies')
-
-result2 = single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
-
-print(result1)
-
-print(result2)
+inner_function() #попробовали вызвать функцию, так не работает тк функция локальная
+test_function() #работает :)
